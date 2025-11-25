@@ -1,0 +1,40 @@
+<div class="container">
+    <h2 class="name">Live Cricket Score</h2>
+
+    <!-- Loading Animation Effect in Fetching Data  -->
+    <div *ngIf = "isLoding; else afterLoading" class="loading-spinner">
+        <!-- LOADING SYMBOL  -->
+        <div class="spinner"></div>
+    </div>
+
+    <ng-template #afterLoading>
+        <div class="card-container d-flex flex-column flex-md-row flex-wrap">
+            @for (live of liveScore; track $index){
+            <div class="p-2 col-md-4 col-12">
+                <div class="card mt-2 mb-2 p-4 shadow-lg">
+                    <div class="header">
+                        <h5>{{live.match}}</h5>
+                        <p class="mb-2">{{live.venue}}</p>
+                    </div>
+                    <div class="body mt-2 px-2">
+                        <div class="d-flex justify-content-between">
+                            <p class="font">{{live.team1}}</p>
+                            <p class="font">{{live.score1}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="font">{{live.team2}}</p>
+                            <p class="font">{{live.score2}}</p>
+                        </div>
+
+                    </div>
+                    <div class="footer">
+                        <p style="color: rgb(240, 108, 108);">{{live.toss}}</p>
+                        <p style="color: green;">{{live.result}}</p>
+
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </ng-template>
+</div>

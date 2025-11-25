@@ -1,0 +1,91 @@
+.start {
+  color: gray;
+}
+.player-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.player-card h5 {
+  margin-bottom: 5px;
+  color: #065de0;
+}
+
+.player-card p {
+  margin-bottom: 5px;
+}
+
+.player-card .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.role {
+  font-weight: 500;
+  font-size: 13px;
+  font-family: monospace;
+  color: rgb(231, 9, 9);
+}
+p span {
+  font-weight: 500;
+  font-family: cursive;
+  /* font-weight: bold; */
+}
+p {
+  font-weight: bold;
+  color: rgb(72, 71, 71);
+}
+.img-resize {
+  height: 170px !important;
+  width: 250px;
+  /* object-fit: cover; */
+  object-fit: contain;
+  /* object-fit: fill; */
+  object-position: center;
+}
+.add{
+  /* margin-right: 50px; */
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  background: #065de0;
+}
+.search {
+  padding: 20px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  border-radius: 7px;
+  margin-top: 21px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #04c062;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .container.heads{
+    flex-direction: column;
+    text-align: center;
+   /* align-items: flex-end; */
+  }
+  .player-card{
+    flex: 1 1 100%;
+  }
+}
+
+
+
+

@@ -1,0 +1,50 @@
+<div *ngIf="isLoading; else afterLoading" class="loading-spinner">
+    <div class="spinner"></div>
+</div>
+
+<ng-template #afterLoading>
+    <div class="container">
+        <h2 class="mt-5 mb-4">Cricket World Cup Point Table</h2>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Matches</th>
+                        <th>Won</th>
+                        <th>Lost</th>
+                        <th>NRR</th>
+                        <th>Points</th>
+                        <th>Last 5 Match</th>
+                    </tr>
+                </thead>
+
+
+
+
+                @for (pointT of pointTable; track $index) {
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src={{pointT.logo}} alt="Team 1 Logo" class="team-logo">
+                            <label>{{pointT.country}}</label>
+                        </td>
+                        <td>{{pointT.matches}}</td>
+                        <td>{{pointT.won}}</td>
+                        <td>{{pointT.lost}}</td>
+                        <td>{{pointT.nrr}}</td>
+                        <td>{{pointT.points}}</td>
+
+                        <td class="last-5-matches">
+                            @for (match of pointT.results; track $index) {
+                            <i [ngClass]="match === 'win' ? 'fa fa-check win' :'fa fa-times loss' "></i>
+                            }
+                        </td>
+                    </tr>
+                    }
+
+            </table>
+
+        </div>
+    </div>
+</ng-template>

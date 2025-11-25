@@ -1,0 +1,43 @@
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" [formGroup]="myFrom" (ngSubmit)="onSubmit(myFrom.value)">
+            <label for="">First & Last Name *</label>
+            <input type="text" name="name" formControlName="name" placeholder="First & Last Name" required />
+
+            <div *ngIf="myFrom.get('name').invalid && (myFrom.get('name').dirty || myFrom.get('name').touched)">
+                <span *ngIf="myFrom.get('name').errors?.['required']" style="color: red;">Name is
+                    required</span>
+                <span *ngIf="myFrom.get('name').errors?.['pattern']" style="color: red;">Min 5 character and max 15
+                    character</span>
+            </div>
+
+            <label for="">Email ID *</label>
+            <input type="email" name="email" formControlName="email" placeholder="email Id" required />
+            <div *ngIf="myFrom.get('email').invalid && (myFrom.get('email').dirty || myFrom.get('email').touched)">
+                <span *ngIf="myFrom.get('email').errors?.['required']" style="color: red;">email is
+                    required</span>
+                <span *ngIf="myFrom.get('email').errors?.['pattern']" style="color: red;">Please enter valid email
+                </span>
+            </div>
+
+            <label for="">Password *</label>
+            <div style="display: flex;" class="password-container">
+                <input [type]="passwordFieldType" name="password" formControlName="password" placeholder="password" />
+                <button style="width: fit-content; color: black; margin-top: 0px; background-color: #f2f2f2;" type="button" (click)="togglePasswordView()" class="password-toggle">
+                  <i *ngIf="passwordFieldType === 'password'" class="fa fa-eye"></i>
+                  <i *ngIf="passwordFieldType === 'text'" class="fa fa-eye-slash"></i>
+                </button>
+              </div>            <div
+                *ngIf="myFrom.get('password').invalid && (myFrom.get('password').dirty || myFrom.get('password').touched)">
+                <span *ngIf="myFrom.get('password').errors?.['required']" style="color: red;">password is
+                    required</span>
+                <span *ngIf="myFrom.get('password').errors?.['pattern']" style="color: red; font-size: 15px;">
+                    Minimum 8 characters, at least one lowercase & uppercase letter and one number
+                </span>
+            </div>
+
+            <button style="margin-top: 15px;" type="submit" [disabled]="myFrom.invalid" >SignUP</button>
+            <p class="message">Not registered? <a routerLink="/login">Login Account</a></p>
+        </form>
+    </div>
+</div>

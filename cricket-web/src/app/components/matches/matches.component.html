@@ -1,0 +1,75 @@
+
+<div class="container">
+  <h2>Upcoming matches and News</h2>
+</div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 d-flex flex-wrap sider1">
+      <!-- Loading Animation Effect in Fetching Data  -->
+      <div *ngIf="isLoading; else afterLoading" class="loading-spinner">
+        <!-- LOADING SYMBOL  -->
+        <div class="spinner"></div>
+      </div>
+      <ng-template #afterLoading>
+        @for (match of upcomingMatch; track $index) {
+        <div class="col-md-5  card m-2 border-1">
+          <div class="header ">
+            <div class="d-flex justify-content-between ">
+              <h6> <img src={{match.flag1}} alt=""> {{match.team1}}</h6>
+              <h6> <img src={{match.flag2}} alt=""> {{match.team2}}</h6>
+            </div>
+            <p class="mt-2 mb-0 text-center">{{match.venue}}</p>
+          </div>
+          <hr class="m-0 mt-2 mb-2">
+          <div class="footer d-flex justify-content-between">
+            <p>{{match.date}}</p>
+            <p>{{match.time}}</p>
+          </div>
+        </div>
+        }
+      </ng-template>
+    </div>
+
+
+    <!-- sider2 -->
+
+    <div class="col-4 sider2 p-0">
+      <div class="news d-flex">
+        <div class="  image">
+          <img src="https://static.cricbuzz.com/a/img/v1/205x152/i1/c469690/the-rule-introduced-in-the-ip.jpg" alt="">
+        </div>
+        <div class="newsText">
+          <p class="m-0 head">NEWS • IPL 2024</p>
+          <h6>SA20 to consider adopting impact player rule</h6>
+          <p>The rule could come up for discussion when the administrators of the South African tournament</p>
+        </div>
+      </div>
+      <hr>
+
+      <div class="news d-flex">
+        <div class="  image">
+          <img src="https://static.cricbuzz.com/a/img/v1/205x152/i1/c469622/mi-the-five-time-champs-are.jpg" alt="">
+        </div>
+        <div class="newsText">
+          <p class="m-0 head">NEWS • IPL 2024</p>
+          <h6>Playoffs Race: Mumbai Indians eliminated.</h6>
+          <p>LSG's crushing defeat has left their hopes of a playoffs three-peat in severe jeopardy</p>
+        </div>
+      </div>
+      <hr>
+
+      <div class="news d-flex">
+        <div class="  image">
+          <img src="https://static.cricbuzz.com/a/img/v1/205x152/i1/c286791/malan-is-the-current-head-coac.jpg" alt="">
+        </div>
+        <div class="newsText">
+          <p class="m-0 head">NEWS • BANGLADESH COACHING</p>
+          <h6>Malan in BCB shortlist for High Performance coaching role</h6>
+          <p>The Ireland head coach is amongst the four names being considered</p>
+        </div>
+      </div>
+      <hr>
+
+    </div>
+  </div>
+</div>

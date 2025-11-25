@@ -1,0 +1,91 @@
+<div class="body">
+    <div class="container signup-container">
+        <form class="signup-form" [formGroup]="myForm" (ngSubmit)="editPlayerData(myForm.value)">
+            <img src="https://static.cricbuzz.com/images/cb_logo.svg" alt="Cricbuzz Logo">
+
+            <div class="form-group mb-2">
+                <label>Enter Player Name <span>*</span></label>
+                <input type="text" class="form-control" formControlName="pName" [ngModel]="playersData?.name"  placeholder="enter name"  required>
+            </div>
+
+            <div
+                *ngIf="myForm.get('pName').invalid && (myForm.get('pName').dirty || myForm.get('pName').touched)">
+
+                <span *ngIf="myForm.get('pName').errors?.['required']" style="color: red;">Name is
+                    required</span>
+
+                <span *ngIf="myForm.get('pName').errors?.['pattern']" style="color: red;">First and Last name is required</span>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="">Select Player Role <span>*</span></label>
+                <select name=""  class="form-control" formControlName="pRole" [ngModel]="playersData?.role" (change)="onRoleChange()">
+                    <option value="">--Select--</option>
+                    <option value="Batter">Batter</option>
+                    <option value="All Rounder">All Rounder</option>
+                    <option value="Wicket-Kipper">Wicket Kipper</option>
+                    <option value="Bowler">Bowler</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-2" *ngIf="showTotalWickets">
+                <label for="">Total Wickets <span>*</span></label>
+                <input type="number" class="form-control" formControlName="pWickets" [ngModel]="playersData?.totalWickets" required>
+              </div>
+
+            <div
+                *ngIf="myForm.get('pRole').invalid && (myForm.get('pRole').dirty || myForm.get('pRole').touched)">
+
+                <span *ngIf="myForm.get('pRole').errors?.['required']" style="color: red;">Select 
+                    required</span>
+
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="">Player Total Run <span>*</span></label>
+                <input type="number" class="form-control" formControlName="pRun" [ngModel]="playersData?.totalRun" placeholder="enter total tun" required>
+            </div>
+
+            <div
+                *ngIf="myForm.get('pRun').invalid && (myForm.get('pRun').dirty || myForm.get('pRun').touched)">
+
+                <span *ngIf="myForm.get('pRun').errors?.['required']" style="color: red;">Run is
+                    required</span>
+
+                <span *ngIf="myForm.get('pRun').errors?.['pattern']" style="color: red;">Min 3 number and max 7
+                    Number</span>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="">Enter Total Match <span>*</span></label>
+                <input type="number" class="form-control" formControlName="pMatch" [ngModel]="playersData?.totalMatch" placeholder="enter total matches" required>
+            </div>
+
+            <div
+                *ngIf="myForm.get('pMatch').invalid && (myForm.get('pMatch').dirty || myForm.get('pMatch').touched)">
+
+                <span *ngIf="myForm.get('pMatch').errors?.['required']" style="color: red;">Total match is
+                    required</span>
+
+                <span *ngIf="myForm.get('pMatch').errors?.['pattern']" style="color: red;">Min 1 number and max 3
+                    Number</span>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="">Profile URL <span>*</span></label>
+                <input type="text" class="form-control" formControlName="pUrl" [ngModel]="playersData?.photo" placeholder="enter photo url" required>
+            </div>
+
+            <div
+                *ngIf="myForm.get('pUrl').invalid && (myForm.get('pUrl').dirty || myForm.get('pUrl').touched)">
+
+                <span *ngIf="myForm.get('pUrl').errors?.['required']" style="color: red;">Profile URL is required</span>
+            </div>
+
+            <div class="form-group mb-2 signUp">
+                <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Save</button>
+            </div>
+
+        </form>
+    </div>
+</div>

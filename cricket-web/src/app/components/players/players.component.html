@@ -1,0 +1,35 @@
+<div class="container heads d-flex justify-content-between flex-wrap">
+    <h2 class="mt-4 start">Players Details</h2>
+    <input type="search" class="search fa-search" name="search" placeholder="Search Player Name"
+    [(ngModel)]="searchName">
+    <h5><button class="btn btn-success mt-4 add " routerLink="addplayer">Add New Player</button></h5>
+</div>
+
+<div *ngIf="isLoading; else afterLoading" class="loading-spinner">
+    <div class="spinner"></div>
+</div>
+<ng-template #afterLoading>
+<div class="container d-flex flex-wrap">
+        <div class="row-12" *ngFor="let player of players | searchplayer:searchName">
+            <div class="col-12">
+                <div class="player-card">
+                    <img class="img-fluid img-resize" src={{player.photo}} alt="Player Image">
+                    <h5>{{player.name}} <span class="role">({{player.role}})</span></h5>
+
+                    <div class="d-flex justify-content-between">
+                        <p><span>Total Runs : </span> {{player.totalRun}}</p>
+                        <p *ngIf="player.role === 'All Rounder' || player.role === 'Bowler'"><span>Wkts :
+                            </span>{{player.totalWickets}}</p>
+                    </div>
+
+                    <p><span>Matches Played : </span> {{player.totalMatch}}</p>
+                    <p><span>Batting Average : </span>{{(player.totalRun/player.totalMatch) | number:'2.2-2'}}
+                    </p>
+                    <button class="btn btn-success" [routerLink]="['edit',player._id]">Update</button>
+                    <button class="btn btn-danger" (click)="deletePlayer(player._id)">Delete</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

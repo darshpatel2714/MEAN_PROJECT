@@ -1,0 +1,99 @@
+<div class="container">
+    <h3>ICC Cricket Rankings - Men's Batting</h3>
+</div>
+<div class="container">
+    <div class="button">
+        <button class="b" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="showT20()">T20</button>
+        <button class="b" routerLinkActive="active" (click)="showODI()">ODI</button>
+        <button class="b" routerLinkActive="active" (click)="showTest()">TEST</button>
+    </div>
+    
+    <!-- T20  -->
+    
+    <div class="table mt-4" *ngIf="showT20Data" >
+        <h4>T20 Players Ranking...!</h4>
+        <table class="table table-hover" >
+            <thead class="header">
+                <th>Position</th>
+                <th>Player</th>
+                <th>Rating</th>
+            </thead>
+            @for (t20 of T20; track $index) {
+            <tbody class="hover">
+                <td>{{t20.position}}</td>
+                <td class="d-flex flex-wrap">
+                    <div class="imageBox p-0">
+                        <img src={{t20.photo}}
+                            alt="">
+                    </div>
+                    <div class="playerName">
+                        <h6>{{t20.pName}}</h6>
+                        <p class="m-0">{{t20.country | uppercase}}</p>
+                    </div>
+                </td>
+                <td>{{t20.rating}}</td>
+            </tbody>
+        }
+        </table>
+    </div>
+
+
+    <!--   ODI  -->
+
+    <div class="table mt-4" *ngIf="showODIData">
+        <h4>ODI Players Ranking...!</h4>
+        <table class="table">
+            <thead class="header">
+                <th>Position</th>
+                <th>Player</th>
+                <th>Rating</th>
+            </thead>
+            @for (odi of Odi; track $index) {
+            <tbody>
+                <td>{{odi.position}}</td>
+                <td class="d-flex flex-wrap">
+                    <div class="imageBox p-0">
+                        <img src={{odi.photo}}
+                            alt="">
+                    </div>
+                    <div class="playerName">
+                        <h6>{{odi.pName}}</h6>
+                        <p class="m-0">{{odi.country | uppercase}}</p>
+                    </div>
+                </td>
+                <td>{{odi.rating}}</td>
+            </tbody>
+        }
+        </table>
+    </div>
+
+    <!-- TEST  -->
+
+    <div class="table mt-4" *ngIf="showTestData">
+        <h4>TEST Players Ranking...!</h4>
+        <table class="table">
+            <thead class="header">
+                <th>Position</th>
+                <th>Player</th>
+                <th>Rating</th>
+            </thead>
+            @for (test of Test; track $index) {
+            <tbody>
+                <td>{{test.position}}</td>
+                <td class="d-flex flex-wrap">
+                    <div class="imageBox p-0">
+                        <img src={{test.photo}}
+                            alt="">
+                    </div>
+                    <div class="playerName">
+                        <h6>{{test.pName}}</h6>
+                        <p class="m-0">{{test.country | uppercase}}</p>
+                    </div>
+                </td>
+                <td>{{test.rating}}</td>
+            </tbody>
+        }
+        </table>
+    </div>
+
+</div>

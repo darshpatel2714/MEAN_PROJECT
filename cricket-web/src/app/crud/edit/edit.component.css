@@ -1,0 +1,40 @@
+.body{
+    background-image: url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=1905&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    opacity: 0.8;
+  }
+  
+  .signup-container {
+      
+    padding: 50px;
+  }
+  
+  .signup-form {
+    max-width: 400px;
+    margin: auto;
+    font-weight: bold;
+    color: rgb(248, 150, 59);
+  }
+  .signup-form span{
+      color: red;
+  }
+  .signUp{
+      margin-top: 30px;
+      display: grid;
+  }
+  
+  .signup-form img {
+    width: 150px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .my-swal-popup {
+    width: 300px;  
+    height: 200px; 
+  }
+  

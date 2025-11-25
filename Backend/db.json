@@ -1,0 +1,50 @@
+ [
+  {
+    "id": "1",
+    "position": 1,
+    "photo": "https://api.bdcrictime.com/Profile/kane-williamson-12_10_2023.jpg",
+    "pName": "Kane Williamson",
+    "country": "NEW ZEALAND",
+    "rating": 859
+  },
+  {
+    "id": "2",
+    "position": 2,
+    "photo": "https://static.indiatvnews.com/ins-web/images/joe-root-1541509796.jpg",
+    "pName": "Joe Root",
+    "country": "ENGLAND",
+    "rating": 823
+  },
+  {
+    "id": "3",
+    "position": 3,
+    "photo": "https://static.javatpoint.com/biography/images/rohit-sharma.png",
+    "pName": "Rohit Sharma",
+    "country": "india",
+    "rating": 745
+  },
+  {
+    "id": "4",
+    "position": 4,
+    "photo": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/320400/320448.png",
+    "pName": "Babar Azam",
+    "country": "pakistan",
+    "rating": 701
+  },
+  {
+    "id": "5",
+    "position": 5,
+    "photo": "https://image.thesportstak.com/images/players/cricket/71.webp",
+    "pName": "Devid Warner",
+    "country": "AUSTRALIA",
+    "rating": 690
+  },
+  {
+    "id": "6",
+    "position": 6,
+    "photo": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/322000/322067.png",
+    "pName": "Aiden Markram",
+    "country": "SOUTH AFRICA",
+    "rating": 734
+  }
+]
