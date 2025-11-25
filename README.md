@@ -72,9 +72,3 @@ Cricbuzz/
 
 ---
 
-## 🏷️ Tags
-`mean-stack`, `angular`, `nodejs`, `mongodb`, `cricket`, `crud`, `email-verification`, `web-app`
-=======
-# MEAN_PROJECT
-Cricbuzz
->>>>>>> 06d4a1a8218545828a69e837f90331821284b5e1
