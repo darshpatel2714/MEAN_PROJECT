@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏏 Cricbuzz - MEAN Stack Web App
 
 **Cricbuzz** is a cricket web app built using the **MEAN stack** — Angular, Node.js, Express, and MongoDB. It provides live scores, match details, team rankings, and player management features.
@@ -73,3 +74,7 @@ Cricbuzz/
 
 ## 🏷️ Tags
 `mean-stack`, `angular`, `nodejs`, `mongodb`, `cricket`, `crud`, `email-verification`, `web-app`
+=======
+# MEAN_PROJECT
+Cricbuzz
+>>>>>>> 06d4a1a8218545828a69e837f90331821284b5e1
